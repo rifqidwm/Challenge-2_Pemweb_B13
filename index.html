@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TO DO LIST</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+
+  <main class="kartu-aplikasi">
+    
+    <header class="bagian-judul">
+      <h1>Things I Need To Do!</h1>
+      <p>Dicatat dan diatur waktunya hayo</p>
+    </header>
+
+    <div class="baris-input">
+      <input 
+        type="text" 
+        id="input-tugas" 
+        placeholder="Tulis tugas baru di sini..." 
+        autocomplete="off"
+      >
+      <button type="button" id="tombol-tambah">Tambah</button>
+    </div>
+
+    <div class="baris-filter">
+      <button type="button" class="tombol-filter aktif" data-filter="semua">Semua</button>
+      <button type="button" class="tombol-filter" data-filter="aktif">Aktif</button>
+      <button type="button" class="tombol-filter" data-filter="selesai">Selesai</button>
+    </div>
+
+    <ul id="daftar-tugas" class="daftar-tugas">
+      
+      <li class="kotak-tugas">
+        <span class="teks-tugas">Mengerjakan praktikum pemweb</span>
+        <button type="button" class="tombol-hapus">Hapus</button>
+      </li>
+
+      <li class="kotak-tugas">
+        <span class="teks-tugas">Mengerjakan praktikum ethack</span>
+        <button type="button" class="tombol-hapus">Hapus</button>
+      </li>
+
+      <li class="kotak-tugas selesai">
+        <span class="teks-tugas">Mengerjakan praktikum jarkom</span>
+        <button type="button" class="tombol-hapus">Hapus</button>
+      </li>
+
+    </ul>
+
+    <footer class="bagian-footer">
+      <p>Klik teks tugas untuk menandai selesai</p>
+    </footer>
+
+  </main>
+
+</body>
+</html>

@@ -1,0 +1,239 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  background-color: #f3f4f6;
+  color: #1f2937;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  min-height: 100vh;
+  padding: 48px 16px;
+}
+
+/* Kartu Utama*/
+.kartu-aplikasi {
+  width: 100%;
+  max-width: 480px;
+  background-color: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  padding: 24px;
+}
+
+
+.bagian-judul {
+  margin-bottom: 20px;
+}
+
+.bagian-judul h1 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #111827;
+  text-align: center;
+}
+
+.bagian-judul p {
+  font-size: 0.875rem;
+  color: #6b7280;
+  margin-top: 4px;
+  text-align: center;
+}
+
+
+.baris-input {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+.baris-input input {
+  flex: 1;
+  padding: 10px 14px;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  outline: none;
+  transition: border-color 0.2s ease;
+}
+
+.baris-input input:focus {
+  border-color: #2563eb;
+}
+
+.baris-input button {
+  padding: 10px 18px;
+  background-color: #14667d;
+  color: #ffffff;
+  border: none;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.baris-input button:hover {
+  background-color: #374151;
+}
+
+/* Baris Tombol Filter */
+.baris-filter {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 16px;
+  border-bottom: 1px solid #f3f4f6;
+  padding-bottom: 12px;
+}
+
+.tombol-filter {
+  padding: 6px 12px;
+  background-color: #ffffff;
+  color: #6b7280;
+  border: 1px solid #e5e7eb;
+  border-radius: 6px;
+  font-size: 0.85rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.tombol-filter:hover {
+  background-color: #f9fafb;
+  color: #14667d;
+}
+
+.tombol-filter.aktif {
+  background-color: #14667d;
+  color: #ffffff;
+  border-color: #f9fafa;
+}
+
+/* Daftar List Tugas */
+.daftar-tugas {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+/* Kotak Tiap Item Tugas */
+.kotak-tugas {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 14px;
+  background-color: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  transition: all 0.15s ease;
+}
+
+.kotak-tugas:hover {
+  border-color: #d1d5db;
+  background-color: #fafafa;
+}
+
+/* Teks Tugas */
+.teks-tugas {
+  font-size: 0.95rem;
+  color: #1f2937;
+  cursor: pointer;
+  flex: 1;
+  word-break: break-word;
+  padding-right: 12px;
+  user-select: none;
+}
+
+/* Kondisi Tugas Selesai*/
+.kotak-tugas.selesai .teks-tugas {
+  text-decoration: line-through;
+  color: #9ca3af;
+}
+
+/* Tombol Hapus */
+.tombol-hapus {
+  background-color: #fee2e2;
+  color: #dc2626;
+  border: 1px solid #fecaca;
+  padding: 6px 10px;
+  font-size: 0.8rem;
+  font-weight: 500;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.tombol-hapus:hover {
+  background-color: #fca5a5;
+  color: #991b1b;
+}
+
+.bagian-footer {
+  text-align: center;
+  font-size: 0.8rem;
+  color: #9ca3af;
+  padding-top: 12px;
+}
+
+.baris-input input {
+  min-width: 0;
+}
+
+.baris-input button {
+  white-space: nowrap;
+}
+
+.baris-filter {
+  flex-wrap: wrap;
+}
+
+.teks-tugas {
+  min-width: 0;
+}
+
+.tombol-hapus {
+  flex-shrink: 0;
+}
+
+@media (max-width: 600px) {
+  body {
+    padding: 24px 12px;
+  }
+
+  .kartu-aplikasi {
+    padding: 18px;
+  }
+
+  .bagian-judul h1 {
+    font-size: 1.3rem;
+  }
+
+  .baris-input input {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 400px) {
+  .baris-input {
+    flex-direction: column;
+  }
+
+  .baris-input button {
+    width: 100%;
+  }
+
+  .baris-filter .tombol-filter {
+    flex: 1;
+  }
+
+  .kotak-tugas {
+    padding: 10px 12px;
+  }
+}
