@@ -8,28 +8,35 @@
 </head>
 <body>
 
-
   <main class="kartu-aplikasi">
-    
+
     <header class="bagian-judul">
       <h1>Things I Need To Do!</h1>
       <p>Dicatat dan diatur waktunya hayo</p>
     </header>
 
     <div class="baris-input">
-      <input 
-        type="text" 
-        id="input-tugas" 
-        placeholder="Tulis tugas baru di sini..." 
+      <input
+        type="text"
+        id="input-tugas"
+        placeholder="Tulis tugas baru di sini..."
         autocomplete="off"
       >
       <button type="button" id="tombol-tambah">Tambah</button>
     </div>
 
     <div class="baris-filter">
-      <button type="button" class="tombol-filter aktif" data-filter="semua">Semua</button>
-      <button type="button" class="tombol-filter" data-filter="aktif">Aktif</button>
-      <button type="button" class="tombol-filter" data-filter="selesai">Selesai</button>
+      <button type="button" class="tombol-filter aktif" data-filter="semua">
+        Semua
+      </button>
+
+      <button type="button" class="tombol-filter" data-filter="aktif">
+        Aktif
+      </button>
+
+      <button type="button" class="tombol-filter" data-filter="selesai">
+        Selesai
+      </button>
     </div>
 
     <ul id="daftar-tugas" class="daftar-tugas"></ul>
@@ -40,63 +47,7 @@
 
   </main>
 
-  <script>
+<script src="script.js"></script>
 
-  //Add Task & Render
-  let tasks = [
-    { text: "Mengerjakan praktikum pemweb", completed: false },
-    { text: "Mengerjakan praktikum ethack", completed: false },
-    { text: "Mengerjakan praktikum jarkom", completed: true }
-  ];
-
-  const inputTugas = document.getElementById("input-tugas");
-  const tombolTambah = document.getElementById("tombol-tambah");
-  const daftarTugas = document.getElementById("daftar-tugas");
-
-  function renderTasks() {
-    daftarTugas.innerHTML = "";
-
-    tasks.forEach((task) => {
-      const li = document.createElement("li");
-      li.className = "kotak-tugas" + (task.completed ? " selesai" : "");
-
-      const span = document.createElement("span");
-      span.className = "teks-tugas";
-      span.textContent = task.text;
-
-      const tombolHapus = document.createElement("button");
-      tombolHapus.type = "button";
-      tombolHapus.className = "tombol-hapus";
-      tombolHapus.textContent = "Hapus";
-
-      li.appendChild(span);
-      li.appendChild(tombolHapus);
-      daftarTugas.appendChild(li);
-    });
-  }
-
-  function tambahTugas() {
-    const teks = inputTugas.value.trim();
-
-    if (teks === "") {
-      return;
-    }
-
-    tasks.push({ text: teks, completed: false });
-    inputTugas.value = "";
-    renderTasks();
-  }
-
-  tombolTambah.addEventListener("click", tambahTugas);
-
-  inputTugas.addEventListener("keydown", (e) => {
-    if (e.key === "Enter") {
-      tambahTugas();
-    }
-  });
-
-  renderTasks();
-
-</script>
 </body>
 </html>
